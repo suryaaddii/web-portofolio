@@ -24,7 +24,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl w-full sm:w-[360px]"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
         {/* Gambar Project */}
         <div className="relative w-full h-[230px]">
@@ -43,19 +43,21 @@ const ProjectCard = ({
 
         {/* Tags + GitHub button */}
         <div className="mt-6 flex items-center justify-between">
+          {/* Tags */}
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span
                 key={`${name}-${tag.name}`}
-                className="px-3 py-1 rounded-full text-[12px] font-medium 
+                className={`px-3 py-1 rounded-full text-[12px] font-medium 
                    bg-gray-800 text-gray-200 border border-gray-700 
-                   hover:bg-gray-700 transition"
+                   hover:bg-gray-700 transition`}
               >
                 {tag.name}
               </span>
             ))}
           </div>
 
+          {/* GitHub Button */}
           <button
             onClick={() => window.open(source_code_link, "_blank")}
             className="flex items-center gap-2 px-4 pr-8 py-2 
@@ -80,8 +82,8 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <p className={`${styles.sectionSubText}`}>My work</p>
+        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
       </motion.div>
 
       <div className="w-full flex flex-col">
@@ -97,8 +99,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      {/* grid biar aman di mobile */}
-      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-7">
+      <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
