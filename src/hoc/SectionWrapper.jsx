@@ -7,15 +7,15 @@ const StarWrapper = (Component, idName) =>
   function HOC() {
     return (
       <motion.section
-        variants={staggerContainer()}
+        variants={staggerContainer(0.25, 0.15)} // biar anak-anak muncul bergiliran
         initial="hidden"
         whileInView="show"
         viewport={{
           once: true,
           amount:
             typeof window !== "undefined" && window.innerWidth < 768
-              ? 0.1
-              : 0.25,
+              ? 0.1 // mobile cepat muncul
+              : 0.25, // desktop lebih natural
         }}
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
       >
