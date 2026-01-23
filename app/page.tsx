@@ -107,7 +107,7 @@ export default function Page() {
                 <div className="text-sm text-neutral-800">
                   <span className="font-semibold">Portfolio:</span>{" "}
                   <a className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900" href="https://suryaaddii.vercel.app" target="_blank" rel="noreferrer">
-                    suryaaddii.vercel.app
+                    suryaaddii-web-portofolio.vercel.app
                   </a>
                 </div>
                 <div className="text-sm text-neutral-800">
@@ -157,11 +157,11 @@ export default function Page() {
           </div>
 
           <div className="mt-10 rounded-3xl border hairline bg-white p-6">
-            <p className="text-sm text-neutral-700">
+            {/* <p className="text-sm text-neutral-700">
               Fokus utama kamu kuat di <span className="font-semibold">Laravel + React</span>,
               dan sekarang portfolio ini saya buat supaya kelihatan “modern”, “clean”, dan
               “berkarakter” dalam gaya b&w.
-            </p>
+            </p> */}
           </div>
         </Section>
 
