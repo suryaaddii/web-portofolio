@@ -12,17 +12,21 @@ export default function Section({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-24 py-6 md:py-16">
+    <section id={id} className="scroll-mt-24 py-10 md:py-14">
       <div className="flex items-end justify-between gap-6">
         <div>
-          <p className="text-xs tracking-[0.35em] text-neutral-500">{eyebrow}</p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">
+          <p className="text-xs font-medium uppercase tracking-[0.38em] text-neutral-500">
+            {eyebrow}
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-neutral-950 md:text-4xl">
             {title}
           </h2>
         </div>
-        <div className="hidden md:block h-px flex-1 hairline border-t" />
+
+        <div className="hidden h-px flex-1 border-t hairline md:block" />
       </div>
-      <div className="mt-10">{children}</div>
+
+      <div className="mt-10 md:mt-12">{children}</div>
     </section>
   );
 }
