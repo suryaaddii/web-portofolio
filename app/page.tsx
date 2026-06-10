@@ -443,9 +443,9 @@ export default function Page() {
           </div>
 
           {/* Certifications */}
-          <div className="mt-10">
+          <div id="certs" className="mt-10">
             <div className="mb-6 flex items-center justify-between">
-              <h3 id="certs" className="text-xl font-semibold tracking-tight">
+              <h3 className="text-xl font-semibold tracking-tight">
                 Certifications
               </h3>
 
