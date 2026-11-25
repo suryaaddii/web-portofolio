@@ -8,21 +8,33 @@ import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 const skills = {
-  "Frontend Development": [
-    "JavaScript",
-    "TypeScript",
-    "React.js",
-    "Next.js",
-    "Tailwind CSS",
-  ],
   "Backend Development": [
-    "PHP",
     "Node.js",
     "Express.js",
+    "RESTful APIs",
+    "PHP",
     "Laravel",
-    "REST API",
   ],
-  Database: ["MySQL", "PostgreSQL", "Sequelize ORM"],
+  "Frontend Development": [
+    "Next.js",
+    "React.js",
+    "TypeScript",
+    "JavaScript",
+    "Tailwind CSS",
+  ],
+  "Database & ORM": ["PostgreSQL", "MySQL", "SQL", "Sequelize ORM"],
+  "IoT & System Integration": [
+    "MQTT",
+    "IoT",
+    "System Integration",
+    "Real-Time Data Processing",
+  ],
+  "Software Engineering": [
+    "Authentication",
+    "Role-Based Access Control",
+    "Software Testing",
+    "Debugging",
+  ],
   "Tools & Workflow": ["Git", "GitHub", "Postman", "Vercel"],
 };
 
@@ -32,25 +44,26 @@ const experience = [
     company: "PT. Elektrik Baterai Indonesia",
     period: "Nov 2025 – Present",
     points: [
-      "Develop frontend leasing web application using Next.js with API integration from backend services.",
-      "Implement dashboard and installment modules with dynamic data rendering.",
-      "Contribute to backend development for Battery Energy Storage System (BESS) full system.",
-      "Design and maintain RESTful APIs and relational database schemas.",
-      "Implement authentication and role-based access control.",
-      "Collaborate with engineers to ensure full system integration between frontend, backend, and operational systems.",
-      "Optimize application performance and improve system scalability.",
+      "Built the Battery Energy Storage System (BESS) backend from scratch using Node.js, Express.js, PostgreSQL, and Sequelize.",
+      "Implemented bidirectional MQTT communication between software and physical BESS devices for real-time telemetry and system integration.",
+      "Developed modular backend services, RESTful APIs, relational database schemas, authentication, and role-based access control.",
+      "Implemented automated power outage preparation workflows, scheduled processes, data aggregation, and retention mechanisms.",
+      "Enhanced the existing BESS monitoring application using Next.js and TypeScript.",
+      "Developed power outage preparation, battery readiness monitoring, and system configuration features.",
+      "Developed a centralized Super Admin Dashboard for managing users, devices, batteries, inverters, and application configurations.",
+      "Built the Three Wheel Leasing frontend from scratch using Next.js, including dashboard and installment management modules.",
+      "Collaborated within a two-developer team, performing hardware integration, software testing, debugging, and production maintenance.",
     ],
   },
   {
     role: "Fullstack Web Developer (Internship)",
     company: "PT. Tiga Serangkai Pustaka Mandiri Group – Assalaam Hypermarket",
-    period: "Sept 2024 – Jan 2025",
+    period: "Sep 2024 – Jan 2025",
     points: [
-      "Revised and improved company marketplace website to enhance UI/UX and performance.",
-      "Developed admin dashboard for transaction monitoring and member management.",
-      "Built online customer registration system integrated with marketplace platform.",
-      "Implemented backend logic using Laravel and optimized database queries.",
-      "Ensured responsive design across devices using Tailwind CSS.",
+      "Enhanced the Assalaam Hypermarket marketplace application using Laravel, PHP, MySQL, and Tailwind CSS.",
+      "Developed administrative dashboards for transaction monitoring and customer management.",
+      "Implemented online customer registration, backend business logic, and database queries.",
+      "Redesigned the marketplace landing page and improved responsive interfaces across desktop and mobile devices.",
     ],
   },
   {
@@ -58,71 +71,99 @@ const experience = [
     company: "Core Initiative Studio",
     period: "Feb 2024 – Mar 2024",
     points: [
-      "Built frontend applications with API integration using Next.js.",
-      "Implemented server-side rendering and client-side rendering strategies.",
-      "Improved component structure and reusability.",
+      "Developed frontend web applications using Next.js and Tailwind CSS.",
+      "Integrated RESTful APIs for dynamic data rendering.",
+      "Implemented server-side rendering (SSR) and client-side rendering (CSR).",
+      "Developed reusable UI components to improve code maintainability.",
       "Collaborated with backend developers to ensure proper API integration and error handling.",
     ],
   },
   {
-    role: "Fullstack Web Developer (Internship)",
+    role: "Fullstack Web Development Program",
     company: "PT Rakamin Kolektif Madani, Jakarta Selatan",
     period: "Aug 2023 – Feb 2024",
     points: [
-      "Completed comprehensive fullstack development training program.",
-      "Developed final project: Inventory Management System using React and Express.js.",
-      "Built RESTful APIs for product, stock, and transaction management.",
-      "Implemented CRUD functionality and JWT-based authentication.",
-      "Managed relational database using Sequelize ORM.",
+      "Developed fullstack web applications using React.js, Node.js, and Express.js.",
+      "Designed and implemented RESTful APIs and CRUD functionalities.",
+      "Implemented user authentication and authorization using JSON Web Token (JWT).",
+      "Managed relational databases using MySQL and Sequelize ORM.",
+      "Applied fullstack development concepts through practical, project-based learning.",
     ],
   },
 ];
 
-const projects = [
+type Project = {
+  name: string;
+  type: string;
+  desc: string;
+  tags: string[];
+  image: string | null;
+  github: string | null;
+  demo: string | null;
+};
+
+const projects: Project[] = [
   {
-    name: "Leasing Web Application",
-    type: "Frontend System",
-    desc: "Developed dashboard and installment management modules with API integration, dynamic routing, and protected pages.",
-    tags: ["Next.js", "REST API", "Protected Route"],
-    image: "/projects/leasing.png",
-    github: "#",
-    demo: "#",
+    name: "Battery Energy Storage System (BESS)",
+    type: "Professional Project · Fullstack & IoT",
+    desc: "Built the backend from scratch and enhanced the monitoring application for Battery Energy Storage Systems. Implemented bidirectional MQTT communication, real-time telemetry processing, RESTful APIs, automated power outage preparation, and battery readiness monitoring.",
+    tags: [
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Sequelize",
+      "MQTT",
+      "Next.js",
+      "TypeScript",
+    ],
+    image: "/projects/bess.png",
+    github: null,
+    demo: null,
   },
   {
-    name: "Battery Energy Storage System Monitoring",
-    type: "Backend System",
-    desc: "Contributed to backend APIs, monitoring logic, operational data processing, and scalable database structure for BESS.",
-    tags: ["Node.js", "Express.js", "PostgreSQL"],
-    image: "/projects/bess.png",
-    github: "#",
-    demo: "#",
+    name: "Super Admin Dashboard",
+    type: "Professional Project · Admin System",
+    desc: "Developed a centralized administrative dashboard for managing users, devices, batteries, inverters, and application configurations through integrated backend services.",
+    tags: ["Next.js", "TypeScript", "RESTful APIs", "Tailwind CSS"],
+    image: null,
+    github: null,
+    demo: null,
+  },
+  {
+    name: "Three Wheel Leasing",
+    type: "Professional Project · Frontend",
+    desc: "Built the frontend application from scratch for leasing operations, including administrative dashboards, installment management, API integration, dynamic data rendering, and protected routes.",
+    tags: ["Next.js", "TypeScript", "RESTful APIs", "Tailwind CSS"],
+    image: "/projects/leasing.png",
+    github: null,
+    demo: null,
   },
   {
     name: "Inventory Management System",
-    type: "Fullstack App",
-    desc: "Built inventory tracking, stock management, transaction records, RESTful API, and relational database schema.",
-    tags: ["React.js", "Express.js", "PostgreSQL"],
-    image: "/projects/inventory.jpg",
-    github: "#",
-    demo: "#",
-  },
-  {
-    name: "Freelance & Client Projects",
-    type: "Client Work",
-    desc: "Delivered landing pages, tutoring website, branding assets, responsive layouts, deployment, and hosting setup.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    image: "/projects/client.png",
-    github: "#",
-    demo: "#",
+    type: "Personal Project · Fullstack",
+    desc: "Developed a fullstack inventory management application with product tracking, stock management, transaction records, RESTful APIs, and relational database integration.",
+    tags: ["React.js", "Node.js", "Express.js", "PostgreSQL"],
+    image: null,
+    github: null,
+    demo: null,
   },
   {
     name: "Study Program Recommendation System",
-    type: "Final Project",
-    desc: "Implemented Content-Based Filtering using Binary Vector Representation and Cosine Similarity algorithm.",
-    tags: ["PHP", "Laravel", "Machine Learning"],
+    type: "Academic Project · Recommendation System",
+    desc: "Developed a study program recommendation system using Content-Based Filtering with Binary Vector Representation and Cosine Similarity to match user preferences with relevant study programs.",
+    tags: ["PHP", "Laravel", "Content-Based Filtering", "Cosine Similarity"],
     image: "/projects/majorney.png",
-    github: "#",
-    demo: "#",
+    github: null,
+    demo: null,
+  },
+  {
+    name: "Freelance & Client Projects",
+    type: "Freelance Project · Web Development",
+    desc: "Developed responsive websites and landing pages for client needs, including tutoring websites, user interface development, deployment, and hosting configuration.",
+    tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    image: "/projects/client.png",
+    github: null,
+    demo: null,
   },
 ];
 
@@ -151,24 +192,48 @@ const contacts = [
 
 const certifications = [
   {
-    title: "Google AI Essentials",
-    image: "/certificates/googleai.png",
-  },
-  {
-    title: "Internship Program – PT Rakamin Kolektif Madani",
+    title: "MSIB Full Stack Web Development Intensive Bootcamp",
+    issuer: "Rakamin Academy",
     image: "/certificates/rakamin.png",
   },
   {
-    title: "Machine Learning Certificate",
+    title: "SQL",
+    issuer: "Sololearn",
+    image: "/certificates/sql.png",
+  },
+  {
+    title: "Machine Learning Professional Certification",
+    issuer: "Altair RapidMiner",
     image: "/certificates/ml.png",
   },
   {
-    title: "Desktop Application Training Professional Level",
-    image: "/certificates/dat.png",
+    title: "Google AI Essentials",
+    issuer: "Google",
+    image: "/certificates/googleai.png",
   },
   {
-    title: "SQL Fundamentals",
-    image: "/certificates/sql.png",
+    title: "Desktop Application Training Professional Level",
+    issuer: null,
+    image: "/certificates/dat.png",
+  },
+];
+
+const quickFacts = [
+  {
+    label: "Experience",
+    value: "1+ Year of Professional Experience",
+  },
+  {
+    label: "Current Role",
+    value: "Software Developer",
+  },
+  {
+    label: "Company",
+    value: "PT. Elektrik Baterai Indonesia",
+  },
+  {
+    label: "Location",
+    value: "Surakarta, Indonesia",
   },
 ];
 
@@ -179,6 +244,8 @@ export default function Page() {
       <Hero />
 
       <Container>
+        {/* ==================== ABOUT ==================== */}
+
         <Section id="about" eyebrow="PROFILE" title="About">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="card-premium rounded-4xl p-7 md:p-8">
@@ -187,16 +254,22 @@ export default function Page() {
               </p>
 
               <h3 className="mt-4 text-2xl font-semibold tracking-tight text-neutral-950">
-                Fullstack Developer focused on building clean, scalable, and
-                maintainable web applications.
+                Fullstack Software Developer focused on backend development, web
+                applications, and IoT system integration.
               </h3>
 
               <p className="mt-5 max-w-3xl text-sm leading-7 text-neutral-700 md:text-base">
-                I have experience in frontend and backend development using
-                React, Next.js, Node.js, Express.js, Laravel, and relational
-                databases. I focus on REST API integration, authentication
-                systems, database design, and building business applications
-                that are reliable and easy to maintain.
+                I am a Fullstack Software Developer with professional experience
+                in developing and maintaining production web applications,
+                particularly in backend engineering and IoT system integration.
+              </p>
+
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-neutral-700 md:text-base">
+                My experience includes building backend systems from scratch,
+                developing RESTful APIs, designing relational databases,
+                implementing MQTT communication, and developing monitoring and
+                business management applications using Node.js, Express.js,
+                Next.js, TypeScript, and PostgreSQL.
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -206,14 +279,17 @@ export default function Page() {
                     href={item.href}
                     target={item.href.startsWith("http") ? "_blank" : undefined}
                     rel={
-                      item.href.startsWith("http") ? "noreferrer" : undefined
+                      item.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
                     }
-                    className="rounded-2xl border hairline bg-white/70 p-4 text-sm transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md"
+                    className="min-w-0 rounded-2xl border hairline bg-white/70 p-4 text-sm transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md"
                   >
                     <p className="text-xs uppercase tracking-[0.25em] text-neutral-400">
                       {item.label}
                     </p>
-                    <p className="mt-2 font-medium text-neutral-900">
+
+                    <p className="mt-2 break-all font-medium text-neutral-900">
                       {item.value}
                     </p>
                   </a>
@@ -227,45 +303,26 @@ export default function Page() {
               </p>
 
               <div className="mt-6 space-y-5">
-                <div className="rounded-2xl border hairline bg-white/70 p-4">
-                  <p className="text-xs uppercase tracking-[0.25em] text-neutral-400">
-                    Experience
-                  </p>
-                  <p className="mt-2 font-semibold text-neutral-950">
-                    2+ Years
-                  </p>
-                </div>
+                {quickFacts.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-2xl border hairline bg-white/70 p-4"
+                  >
+                    <p className="text-xs uppercase tracking-[0.25em] text-neutral-400">
+                      {item.label}
+                    </p>
 
-                <div className="rounded-2xl border hairline bg-white/70 p-4">
-                  <p className="text-xs uppercase tracking-[0.25em] text-neutral-400">
-                    Current Role
-                  </p>
-                  <p className="mt-2 font-semibold text-neutral-950">
-                    Software Developer
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border hairline bg-white/70 p-4">
-                  <p className="text-xs uppercase tracking-[0.25em] text-neutral-400">
-                    Company
-                  </p>
-                  <p className="mt-2 font-semibold text-neutral-950">
-                    PT. Elektrik Baterai Indonesia
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border hairline bg-white/70 p-4">
-                  <p className="text-xs uppercase tracking-[0.25em] text-neutral-400">
-                    Location
-                  </p>
-                  <p className="mt-2 font-semibold text-neutral-950">
-                    Surakarta, Indonesia
-                  </p>
-                </div>
+                    <p className="mt-2 font-semibold text-neutral-950">
+                      {item.value}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </Section>
+
+        {/* ==================== TECH STACK ==================== */}
 
         <Section id="skills" eyebrow="TOOLING" title="Tech Stack">
           <div className="grid gap-5 md:grid-cols-2">
@@ -288,6 +345,8 @@ export default function Page() {
           </div>
         </Section>
 
+        {/* ==================== EXPERIENCE ==================== */}
+
         <Section id="experience" eyebrow="CAREER" title="Experience">
           <div className="relative space-y-5">
             <div className="absolute left-2.5 top-4 hidden h-[calc(100%-2rem)] w-px bg-neutral-200 md:block" />
@@ -299,10 +358,10 @@ export default function Page() {
               >
                 <div className="hidden md:block">
                   <div className="sticky top-28 flex items-center gap-3">
-                    <span className="relative z-10 h-5 w-5 rounded-full border-[3px] border-neutral-50 bg-neutral-950" />
+                    <span className="relative z-10 h-5 w-5 shrink-0 rounded-full border-[3px] border-neutral-50 bg-neutral-950" />
 
                     <p className="text-xs text-neutral-500">
-                      {index === 0 ? "Now" : item.period.split("–")[0]}
+                      {index === 0 ? "Now" : item.period.split("–")[0].trim()}
                     </p>
                   </div>
                 </div>
@@ -325,9 +384,10 @@ export default function Page() {
                   </div>
 
                   <ul className="mt-5 space-y-3 text-sm leading-6 text-neutral-700">
-                    {item.points.slice(0, 4).map((point) => (
+                    {item.points.map((point) => (
                       <li key={point} className="flex gap-3">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-950/40" />
+
                         <span>{point}</span>
                       </li>
                     ))}
@@ -338,25 +398,42 @@ export default function Page() {
           </div>
         </Section>
 
+        {/* ==================== FEATURED PROJECTS ==================== */}
+
         <Section id="projects" eyebrow="WORK" title="Featured Projects">
           <div className="grid gap-6 lg:grid-cols-2">
             {projects.map((project) => (
               <div
                 key={project.name}
-                className="group card-premium overflow-hidden rounded-4xl transition-all duration-300 hover:-translate-y-1"
+                className="group card-premium flex h-full flex-col overflow-hidden rounded-4xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="relative h-56 overflow-hidden border-b hairline bg-neutral-100">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
+                <div className="relative h-56 shrink-0 overflow-hidden border-b hairline bg-neutral-100">
+                  {project.image ? (
+                    <>
+                      <Image
+                        src={project.image}
+                        alt={project.name}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
 
-                  <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent" />
+                    </>
+                  ) : (
+                    <div className="flex h-full flex-col items-center justify-center gap-3 bg-linear-to-br from-neutral-100 to-neutral-200 px-6 text-center">
+                      <span className="text-4xl font-semibold tracking-tight text-neutral-400">
+                        {"</>"}
+                      </span>
+
+                      <p className="text-xs font-medium uppercase tracking-[0.25em] text-neutral-500">
+                        Project Showcase
+                      </p>
+                    </div>
+                  )}
                 </div>
 
-                <div className="p-7">
+                <div className="flex flex-1 flex-col p-7">
                   <p className="text-xs font-medium uppercase tracking-[0.3em] text-neutral-500">
                     {project.type}
                   </p>
@@ -375,26 +452,38 @@ export default function Page() {
                     ))}
                   </div>
 
-                  <div className="mt-8 flex items-center gap-3">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border hairline bg-white px-4 py-2 text-sm font-medium transition hover:bg-neutral-100"
-                    >
-                      <FaGithub size={16} />
-                      GitHub
-                    </a>
+                  <div className="mt-auto flex flex-wrap items-center gap-3 pt-8">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border hairline bg-white px-4 py-2 text-sm font-medium transition hover:bg-neutral-100"
+                      >
+                        <FaGithub size={16} />
+                        GitHub
+                      </a>
+                    )}
 
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-black"
-                    >
-                      <ExternalLink size={16} />
-                      Live Demo
-                    </a>
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-neutral-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-black"
+                      >
+                        <ExternalLink size={16} />
+                        Live Demo
+                      </a>
+                    )}
+
+                    {!project.github && !project.demo && (
+                      <span className="inline-flex items-center gap-2 rounded-full border hairline bg-neutral-50 px-4 py-2 text-xs font-medium text-neutral-500">
+                        {project.type.startsWith("Professional")
+                          ? "Professional Project"
+                          : "Project Showcase"}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -402,12 +491,13 @@ export default function Page() {
           </div>
         </Section>
 
+        {/* ==================== EDUCATION ==================== */}
+
         <Section
           id="education"
           eyebrow="ACADEMIC"
           title="Education & Certifications"
         >
-          {/* Education */}
           <div className="card-premium rounded-4xl p-7 md:p-8">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
@@ -420,13 +510,13 @@ export default function Page() {
                 </h3>
 
                 <p className="mt-1 text-sm text-neutral-600">
-                  B.Sc. Informatics Engineering
+                  Bachelor&apos;s Degree in Informatics Engineering
                 </p>
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <span className="rounded-full border hairline bg-white px-4 py-2 text-xs font-medium text-neutral-500">
-                  2021 - 2025
+                  2021 – 2025
                 </span>
 
                 <span className="rounded-full border hairline bg-white px-4 py-2 text-xs font-medium text-neutral-500">
@@ -436,15 +526,17 @@ export default function Page() {
             </div>
 
             <p className="mt-6 max-w-4xl text-sm leading-7 text-neutral-700">
-              Final project focused on Content-Based Filtering using Binary
-              Vector Representation and Cosine Similarity for study program
-              recommendation.
+              Completed a final project focused on developing a study program
+              recommendation system using Content-Based Filtering with Binary
+              Vector Representation and Cosine Similarity to match user
+              preferences with relevant study programs.
             </p>
           </div>
 
-          {/* Certifications */}
+          {/* ==================== CERTIFICATIONS ==================== */}
+
           <div id="certs" className="mt-10">
-            <div className="mb-6 flex items-center justify-between">
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
               <h3 className="text-xl font-semibold tracking-tight">
                 Certifications
               </h3>
@@ -458,49 +550,54 @@ export default function Page() {
               {certifications.map((cert) => (
                 <div
                   key={cert.title}
-                  className="
-            group
-            card-premium
-            overflow-hidden
-            rounded-3xl
-            transition-all
-            duration-300
-            hover:-translate-y-1
-          "
+                  className="group card-premium flex h-full flex-col overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="relative h-36 bg-neutral-100">
+                  <a
+                    href={cert.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${cert.title}`}
+                    className="relative block h-40 overflow-hidden bg-neutral-100"
+                  >
                     <Image
                       src={cert.image}
                       alt={cert.title}
                       fill
-                      className="object-cover transition duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      className="object-contain p-2 transition duration-500 group-hover:scale-105"
                     />
+                  </a>
 
-                    <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent" />
-                  </div>
-
-                  <div className="flex h-28 flex-col justify-between p-5">
-                    <h4 className="line-clamp-2 text-sm font-semibold text-neutral-950">
+                  <div className="flex flex-1 flex-col p-5">
+                    <h4 className="text-sm font-semibold leading-6 text-neutral-950">
                       {cert.title}
                     </h4>
 
-                    <button
-                      className="
-                        text-xs
-                        font-medium
-                        text-neutral-500
-                        transition
-                        hover:text-neutral-950
-                      "
-                    >
-                      View Certificate →
-                    </button>
+                    {cert.issuer && (
+                      <p className="mt-1 text-xs text-neutral-500">
+                        {cert.issuer}
+                      </p>
+                    )}
+
+                    <div className="mt-auto pt-5">
+                      <a
+                        href={cert.image}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs font-medium text-neutral-500 transition hover:text-neutral-950"
+                      >
+                        View Certificate
+                        <ExternalLink size={12} />
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </Section>
+
+        {/* ==================== CONTACT ==================== */}
 
         <Section id="contact" eyebrow="LET'S TALK" title="Contact">
           <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
@@ -510,8 +607,14 @@ export default function Page() {
               </h3>
 
               <p className="mt-4 max-w-2xl text-sm leading-7 text-neutral-700 md:text-base">
-                Open to discussing web development, API integration, backend
-                systems, and software engineering opportunities.
+                Open to connecting with software engineers, technology
+                professionals, and teams interested in backend development,
+                fullstack applications, IoT, and system integration.
+              </p>
+
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-neutral-700 md:text-base">
+                Feel free to reach out for professional discussions,
+                collaboration, or software engineering opportunities.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -525,7 +628,7 @@ export default function Page() {
                 <a
                   href="https://github.com/suryaaddii"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full border hairline bg-white px-6 py-3 text-sm font-medium text-neutral-900 transition hover:-translate-y-0.5 hover:bg-neutral-100"
                 >
                   GitHub
@@ -534,7 +637,7 @@ export default function Page() {
                 <a
                   href="https://linkedin.com/in/surya-adi-sn"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full border hairline bg-white px-6 py-3 text-sm font-medium text-neutral-900 transition hover:-translate-y-0.5 hover:bg-neutral-100"
                 >
                   LinkedIn
@@ -554,25 +657,40 @@ export default function Page() {
                   </span>{" "}
                   Surakarta, Indonesia
                 </p>
-                <p>
+
+                <p className="break-all">
                   <span className="font-semibold text-neutral-950">Email:</span>{" "}
-                  surya.datago@gmail.com
+                  <a
+                    href="mailto:surya.datago@gmail.com"
+                    className="transition hover:text-neutral-950 hover:underline"
+                  >
+                    surya.datago@gmail.com
+                  </a>
                 </p>
+
                 <p>
                   <span className="font-semibold text-neutral-950">Phone:</span>{" "}
-                  +62 823-2841-0298
+                  <a
+                    href="tel:+6282328410298"
+                    className="transition hover:text-neutral-950 hover:underline"
+                  >
+                    +62 823-2841-0298
+                  </a>
                 </p>
               </div>
             </div>
           </div>
         </Section>
 
+        {/* ==================== FOOTER ==================== */}
+
         <footer className="pb-20 pt-10">
           <div className="h-px w-full border-t hairline" />
 
           <div className="mt-8 flex flex-wrap items-center justify-between gap-3 text-sm text-neutral-500">
             <p>© {new Date().getFullYear()} Surya Adi</p>
-            <p>Software Developer | Next.js, React, TypeScript</p>
+
+            <p>Fullstack Software Developer · Backend & IoT</p>
           </div>
         </footer>
       </Container>

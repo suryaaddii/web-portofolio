@@ -21,7 +21,7 @@ export default function Hero() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border hairline bg-white/80 px-3 py-1.5 text-xs font-medium text-neutral-700 shadow-sm backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-green-500" />
-              Available for Work
+              Software Developer
             </div>
 
             <p className="mt-6 text-xs font-medium tracking-[0.45em] text-neutral-500">
@@ -29,60 +29,68 @@ export default function Hero() {
             </p>
 
             <h1 className="mt-5 text-balance text-5xl font-black leading-[0.9] tracking-[-0.055em] text-neutral-950 md:text-6xl lg:text-7xl">
-              Full Stack
+              Fullstack Software
               <br />
               Developer
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-neutral-600 md:text-lg">
-              Building modern web applications, scalable backend services, and
-              business systems with a strong focus on performance,
-              maintainability, and user experience.
+            <p className="mt-5 text-sm font-medium text-neutral-700 md:text-base">
+              Backend Development · IoT & System Integration
+            </p>
+
+            <p className="mt-4 max-w-xl text-base leading-8 text-neutral-600 md:text-lg">
+              Building reliable web applications, backend services, and
+              IoT-integrated systems with a focus on maintainability,
+              performance, and real-world business needs.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="/cv.pdf"
+                download
                 className="inline-flex items-center justify-center rounded-full bg-neutral-950 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-neutral-900/15 transition hover:-translate-y-0.5 hover:bg-black"
               >
                 Download CV
               </a>
 
               <a
-                href="#contact"
+                href="#projects"
                 className="inline-flex items-center justify-center rounded-full border hairline bg-white px-6 py-3 text-sm font-medium text-neutral-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-100"
               >
-                Contact Me
+                View Projects
               </a>
+
               <a
                 href="https://github.com/suryaaddii"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full border hairline bg-white px-6 py-3 text-sm font-medium text-neutral-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-neutral-100"
               >
                 GitHub
               </a>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-10">
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-6">
               <div>
-                <p className="text-3xl font-bold tracking-tight">2+</p>
+                <p className="text-3xl font-bold tracking-tight">1+</p>
                 <p className="mt-1 text-sm text-neutral-500">
-                  Years Experience
+                  Years of Professional
+                  <br />
+                  Experience
                 </p>
               </div>
 
               <div>
-                <p className="text-3xl font-bold tracking-tight">5+</p>
+                <p className="text-3xl font-bold tracking-tight">5</p>
                 <p className="mt-1 text-sm text-neutral-500">
                   Featured Projects
                 </p>
               </div>
 
               <div>
-                <p className="text-3xl font-bold tracking-tight">100%</p>
+                <p className="text-3xl font-bold tracking-tight">IoT</p>
                 <p className="mt-1 text-sm text-neutral-500">
-                  Web Development Focus
+                  System Integration
                 </p>
               </div>
             </div>
@@ -112,7 +120,7 @@ export default function Hero() {
               </div>
 
               <div className="absolute -bottom-4 left-1/2 w-max -translate-x-1/2 rounded-2xl border hairline bg-white/85 px-4 py-3 text-xs font-medium text-neutral-600 shadow-lg shadow-neutral-900/10 backdrop-blur">
-                Building ideas into scalable software.
+                Building reliable software solutions.
               </div>
             </div>
           </motion.div>
